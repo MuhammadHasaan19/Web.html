@@ -1,0 +1,84 @@
+/* Dark Theme */
+<div id="tnb-dark-mode-toggle-wrapper" class="w3-bar-item">
+      <a id="tnb-dark-mode-toggle-btn" href="javascript:void(0);" class="tnb-button fa ga-nav ga-dark-mode-toggle" onclick="TopNavBar.toggleUserPreferredTheme()" role="button" title="Toggle light/dark mode" aria-label="Toggle light/dark mode">
+        <i></i>
+      </a>
+    </div>
+
+/* Sign in and Sign out  */
+<div class="tnb-right-section">
+      <!-- < user-anonymous -->
+      <a href="https://profile.w3schools.com/log-in?redirect_url=https%3A%2F%2Fwww.w3schools.com%2Fbootstrap%2Fbootstrap_get_started.asp" class="user-anonymous tnb-login-btn w3-bar-item w3-btn bar-item-hover w3-right ws-light-green ga-top ga-top-login" title="Login to your account" aria-label="Login to your account">
+        Log in
+      </a>
+
+      <a href="https://profile.w3schools.com/sign-up?redirect_url=https%3A%2F%2Fwww.w3schools.com%2Fbootstrap%2Fbootstrap_get_started.asp" class="user-anonymous tnb-signup-btn w3-bar-item w3-button w3-right ws-green ws-hover-green ga-top ga-top-signup" title="Sign Up to Improve Your Learning Experience" aria-label="Sign Up to Improve Your Learning Experience">
+        Sign Up
+      </a>
+      <!-- > user-anonymous -->
+
+      <!-- < user-authenticated -->
+      <a href="https://profile.w3schools.com/log-in?redirect_url=https%3A%2F%2Fwww.w3schools.com%2Fbootstrap%2Fbootstrap_get_started.asp" class="user-authenticated user-profile-btn w3-alt-btn w3-hide ga-top ga-top-profile" title="Your W3Schools Profile" aria-label="Your W3Schools Profile">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 2048 2048" class="user-profile-icon" aria-label="Your W3Schools Profile Icon">
+          <path d="M 843.500 1148.155 C 837.450 1148.515, 823.050 1149.334, 811.500 1149.975 C 742.799 1153.788, 704.251 1162.996, 635.391 1192.044 C 517.544 1241.756, 398.992 1352.262, 337.200 1470 C 251.831 1632.658, 253.457 1816.879, 340.500 1843.982 C 351.574 1847.431, 1696.426 1847.431, 1707.500 1843.982 C 1794.543 1816.879, 1796.169 1632.658, 1710.800 1470 C 1649.008 1352.262, 1530.456 1241.756, 1412.609 1192.044 C 1344.588 1163.350, 1305.224 1153.854, 1238.500 1150.039 C 1190.330 1147.286, 1196.307 1147.328, 1097 1149.035 C 1039.984 1150.015, 1010.205 1150.008, 950 1149.003 C 851.731 1147.362, 856.213 1147.398, 843.500 1148.155" stroke="none" fill="#2a93fb" fill-rule="evenodd"></path>
+          <path d="M 1008 194.584 C 1006.075 194.809, 999.325 195.476, 993 196.064 C 927.768 202.134, 845.423 233.043, 786 273.762 C 691.987 338.184, 622.881 442.165, 601.082 552 C 588.496 615.414, 592.917 705.245, 611.329 760.230 C 643.220 855.469, 694.977 930.136, 763.195 979.321 C 810.333 1013.308, 839.747 1026.645, 913.697 1047.562 C 1010.275 1074.879, 1108.934 1065.290, 1221 1017.694 C 1259.787 1001.221, 1307.818 965.858, 1339.852 930.191 C 1460.375 795.998, 1488.781 609.032, 1412.581 451.500 C 1350.098 322.327, 1240.457 235.724, 1097.500 202.624 C 1072.356 196.802, 1025.206 192.566, 1008 194.584" stroke="none" fill="#0aaa8a" fill-rule="evenodd"></path>
+        </svg>
+
+        <svg xmlns="http://www.w3.org/2000/svg" class="user-progress" aria-label="Your W3Schools Profile Progress">
+          <path class="user-progress-circle1" fill="none" d="M 25.99650934151373 15.00000030461742 A 20 20 0 1 0 26 15"></path>
+          <path class="user-progress-circle2" fill="none" d="M 26 15 A 20 20 0 0 0 26 15"></path>
+        </svg>
+
+        <span class="user-progress-star">★</span>
+
+        <span class="user-progress-point">+1</span>
+      </a>
+
+      <a href="https://pathfinder.w3schools.com" class="user-authenticated tnb-dashboard-btn w3-bar-item w3-button w3-hide w3-right w3-white ga-top ga-top-dashboard" title="Your W3Schools Dashboard" aria-label="Your W3Schools Dashboard">
+        My W3Schools
+      </a>
+      <!-- > user-authenticated -->
+
+      <!-- < user-anonymous - action-btn -->
+      <a target="_blank" href="https://campus.w3schools.com/collections/course-catalog" class="user-anonymous tnb-certificates-btn w3-bar-item w3-button w3-right w3-white ga-top ga-top-certificates" title="W3Schools Certificates" aria-label="W3Schools Certificates">
+        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" aria-hidden="true">
+          <path d="M24 0C10.7 0 0 10.7 0 24S10.7 48 24 48H69.5c3.8 0 7.1 2.7 7.9 6.5l51.6 271c6.5 34 36.2 58.5 70.7 58.5H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H199.7c-11.5 0-21.4-8.2-23.6-19.5L170.7 288H459.2c32.6 0 61.1-21.8 69.5-53.3l41-152.3C576.6 57 557.4 32 531.1 32h-411C111 12.8 91.6 0 69.5 0H24zM131.1 80H520.7L482.4 222.2c-2.8 10.5-12.3 17.8-23.2 17.8H161.6L131.1 80zM176 512a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm336-48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0z" fill="currentColor"></path>
+        </svg>
+        Get Certified
+      </a>
+
+      <a href="/spaces/index.php" class="user-anonymous tnb-spaces-btn w3-bar-item w3-button w3-right w3-white ga-top ga-top-spaces" title="Get Your Own Website With W3Schools Spaces" aria-label="Get Your Own Website With W3Schools Spaces">
+        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512" aria-hidden="true">
+          <path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z" fill="currentColor"></path>
+        </svg>
+        Spaces
+      </a>
+      
+      <a href="/pathfinder/pathfinder_goals.php" class="user-anonymous tnb-jobs-btn w3-bar-item w3-button w3-right w3-white ga-top ga-top-goals" title="Get personalized learning journey based on your current skills and goals" aria-label="Get personalized learning journey based on your current skills and goals">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.3685 14.6642C18.3796 14.6642 17.4129 14.9574 16.5907 15.5068C15.7684 16.0562 15.1276 16.8371 14.7491 17.7508C14.3707 18.6644 14.2717 19.6697 14.4646 20.6396C14.6575 21.6095 15.1337 22.5005 15.833 23.1997C16.5323 23.899 17.4232 24.3752 18.3931 24.5681C19.363 24.761 20.3683 24.662 21.2819 24.2836C22.1956 23.9051 22.9765 23.2643 23.5259 22.442C24.0753 21.6198 24.3685 20.6531 24.3685 19.6642M20.3685 10.7192C18.5146 10.5112 16.6418 10.8845 15.0093 11.7874C13.3768 12.6903 12.0652 14.0782 11.256 15.7591C10.4467 17.44 10.1798 19.3308 10.4922 21.17C10.8045 23.0093 11.6807 24.706 12.9996 26.0255C14.3184 27.3449 16.0146 28.222 17.8537 28.5353C19.6928 28.8486 21.5838 28.5826 23.2651 27.7742C24.9464 26.9658 26.3349 25.6549 27.2386 24.0229C28.1424 22.3908 28.5166 20.5182 28.3095 18.6642M22.3685 16.6642V13.6642L25.3685 10.6642V13.6642H28.3685L25.3685 16.6642H22.3685ZM22.3685 16.6642L19.3685 19.6642M18.3685 19.6642C18.3685 19.9294 18.4739 20.1838 18.6614 20.3713C18.849 20.5588 19.1033 20.6642 19.3685 20.6642C19.6337 20.6642 19.8881 20.5588 20.0756 20.3713C20.2632 20.1838 20.3685 19.9294 20.3685 19.6642C20.3685 19.399 20.2632 19.1446 20.0756 18.9571C19.8881 18.7695 19.6337 18.6642 19.3685 18.6642C19.1033 18.6642 18.849 18.7695 18.6614 18.9571C18.4739 19.1446 18.3685 19.399 18.3685 19.6642Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6.09998 3.16406V10.1641M2.59998 6.66406H9.59998" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        Set Goal
+      </a>
+
+      <!-- > user-anonymous - action-btn -->
+
+      <!-- < user-authenticated - action-btn -->
+      <a target="_blank" href="https://campus.w3schools.com/collections/course-catalog" class="user-authenticated tnb-certificates-btn w3-bar-item w3-button w3-hide w3-right w3-white ga-top ga-top-certificates" title="W3Schools Certificates" aria-label="W3Schools Certificates">
+        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" aria-hidden="true">
+          <path d="M24 0C10.7 0 0 10.7 0 24S10.7 48 24 48H69.5c3.8 0 7.1 2.7 7.9 6.5l51.6 271c6.5 34 36.2 58.5 70.7 58.5H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H199.7c-11.5 0-21.4-8.2-23.6-19.5L170.7 288H459.2c32.6 0 61.1-21.8 69.5-53.3l41-152.3C576.6 57 557.4 32 531.1 32h-411C111 12.8 91.6 0 69.5 0H24zM131.1 80H520.7L482.4 222.2c-2.8 10.5-12.3 17.8-23.2 17.8H161.6L131.1 80zM176 512a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm336-48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0z" fill="currentColor"></path>
+        </svg>
+        Get Certified
+      </a>
+
+      <a href="https://spaces.w3schools.com/space/" class="user-authenticated tnb-spaces-btn w3-bar-item w3-button w3-hide w3-right w3-white ga-top ga-top-spaces" title="Go to Your W3Schools Space" aria-label="Go to Your W3Schools Space">
+        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512" aria-hidden="true">
+          <path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z" fill="currentColor"></path>
+        </svg>
+        Spaces
+      </a>
+      
+      <a href="/pathfinder/pathfinder_goals.php" class="user-authenticated tnb-jobs-btn w3-bar-item w3-button w3-hide w3-right w3-white ga-top ga-top-goals" title="Get personalized learning journey based on your current skills and goals" aria-label="Get personalized learning journey based on your current skills and goals">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.3685 14.6642C18.3796 14.6642 17.4129 14.9574 16.5907 15.5068C15.7684 16.0562 15.1276 16.8371 14.7491 17.7508C14.3707 18.6644 14.2717 19.6697 14.4646 20.6396C14.6575 21.6095 15.1337 22.5005 15.833 23.1997C16.5323 23.899 17.4232 24.3752 18.3931 24.5681C19.363 24.761 20.3683 24.662 21.2819 24.2836C22.1956 23.9051 22.9765 23.2643 23.5259 22.442C24.0753 21.6198 24.3685 20.6531 24.3685 19.6642M20.3685 10.7192C18.5146 10.5112 16.6418 10.8845 15.0093 11.7874C13.3768 12.6903 12.0652 14.0782 11.256 15.7591C10.4467 17.44 10.1798 19.3308 10.4922 21.17C10.8045 23.0093 11.6807 24.706 12.9996 26.0255C14.3184 27.3449 16.0146 28.222 17.8537 28.5353C19.6928 28.8486 21.5838 28.5826 23.2651 27.7742C24.9464 26.9658 26.3349 25.6549 27.2386 24.0229C28.1424 22.3908 28.5166 20.5182 28.3095 18.6642M22.3685 16.6642V13.6642L25.3685 10.6642V13.6642H28.3685L25.3685 16.6642H22.3685ZM22.3685 16.6642L19.3685 19.6642M18.3685 19.6642C18.3685 19.9294 18.4739 20.1838 18.6614 20.3713C18.849 20.5588 19.1033 20.6642 19.3685 20.6642C19.6337 20.6642 19.8881 20.5588 20.0756 20.3713C20.2632 20.1838 20.3685 19.9294 20.3685 19.6642C20.3685 19.399 20.2632 19.1446 20.0756 18.9571C19.8881 18.7695 19.6337 18.6642 19.3685 18.6642C19.1033 18.6642 18.849 18.7695 18.6614 18.9571C18.4739 19.1446 18.3685 19.399 18.3685 19.6642Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6.09998 3.16406V10.1641M2.59998 6.66406H9.59998" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        Set Goal
+      </a>
+      <!-- > user-authenticated - action-btn -->
+    </div>
