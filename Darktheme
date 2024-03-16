@@ -5,7 +5,7 @@
       </a>
     </div>
 
-/* Sign in and Sign out  */
+/* Sign in and Sign out option  */
 <div class="tnb-right-section">
       <!-- < user-anonymous -->
       <a href="https://profile.w3schools.com/log-in?redirect_url=https%3A%2F%2Fwww.w3schools.com%2Fbootstrap%2Fbootstrap_get_started.asp" class="user-anonymous tnb-login-btn w3-bar-item w3-btn bar-item-hover w3-right ws-light-green ga-top ga-top-login" title="Login to your account" aria-label="Login to your account">
