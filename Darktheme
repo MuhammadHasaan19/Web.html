@@ -1,9 +1,42 @@
 /* Dark Theme */
-<div id="tnb-dark-mode-toggle-wrapper" class="w3-bar-item">
-      <a id="tnb-dark-mode-toggle-btn" href="javascript:void(0);" class="tnb-button fa ga-nav ga-dark-mode-toggle" onclick="TopNavBar.toggleUserPreferredTheme()" role="button" title="Toggle light/dark mode" aria-label="Toggle light/dark mode">
-        <i></i>
-      </a>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dark Mode Toggle</title>
+<style>
+  body {
+    background-color: #fff; /* Default background color */
+    color: #000; /* Default text color */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  }
+  body.dark-mode {
+    background-color: #333; /* Dark mode background color */
+    color: #fff; /* Dark mode text color */
+  }
+</style>
+</head>
+<body>
+
+<!-- Dark Mode Toggle Button -->
+<li class="tnb-dark-mode-toggle-wrapper" class="w3-bar-item">
+  <a class="tnb-dark-mode-toggle-btn" href="javascript:void(0);" onclick="toggleDarkMode()">
+    <i class="tnb-button fa ga-nav ga-dark-mode-toggle" role="button" title="Toggle light/dark mode" aria-label="Toggle light/dark mode">🌙</i>
+  </a>
+</li>
+
+<script>
+  // Function to toggle dark mode
+  function toggleDarkMode() {
+    const body = document.body;
+    body.classList.toggle('dark-mode'); // Toggle the 'dark-mode' class on the body
+  }
+</script>
+
+</body>
+</html>
+
 
 /* Sign in and Sign out option  */
 <div class="tnb-right-section">
