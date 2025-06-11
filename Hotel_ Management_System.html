@@ -74,7 +74,17 @@
       <h3>Welcome Admin</h3>
       <input type="text" id="customerName" placeholder="Customer Name" />
       <input type="text" id="phoneNumber" placeholder="Phone Number" />
-      <input type="text" id="roomNumber" placeholder="Room Number" />
+      
+      <select id="roomType" onchange="updateAvailableRooms()">
+        <option value="">Select Room Type</option>
+        <option value="family">Family (Ground Floor)</option>
+        <option value="couple1">Couple (First Floor)</option>
+        <option value="couple2">Couple (Second Floor)</option>
+      </select>
+
+      <select id="availableRoomsSelect" class="hidden"></select>
+      <p id="roomAvailabilityMessage" style="color: red; display: none;">No rooms available for selected type!</p>
+
       <select id="stayDuration">
         <option value="">Select Stay Duration</option>
         <option value="1">1 Day 1 Night</option>
@@ -85,6 +95,7 @@
         <option value="6">6 Days 6 Nights</option>
         <option value="7">7 Days 7 Nights (Max)</option>
       </select>
+
       <div class="rent" id="rentDisplay"></div>
       <button onclick="calculateRent()">Calculate Rent</button>
       <button onclick="addCustomer()">Add Customer</button>
@@ -102,6 +113,12 @@
   <script>
     const correctEmail = "hasaanjaved276@gmail.com";
     const correctPassword = "admin123";
+
+    const totalRooms = {
+      family: Array.from({ length: 7 }, (_, i) => `GF-${i + 1}`),
+      couple1: Array.from({ length: 7 }, (_, i) => `FF-${i + 1}`),
+      couple2: Array.from({ length: 6 }, (_, i) => `SF-${i + 1}`)
+    };
 
     let customerData = JSON.parse(localStorage.getItem("customers")) || [];
     let rentPKR = 0;
@@ -142,42 +159,72 @@
         `Rent: Rs ${rentPKR} / $${rentUSD} for ${duration} Day(s) & Night(s)`;
     }
 
-    function addCustomer() {
-      const name = document.getElementById("customerName").value;
-      const phone = document.getElementById("phoneNumber").value;
-      const room = document.getElementById("roomNumber").value;
-      const duration = parseInt(document.getElementById("stayDuration").value);
+    function updateAvailableRooms() {
+      const roomType = document.getElementById("roomType").value;
+      const roomSelect = document.getElementById("availableRoomsSelect");
+      const availabilityMsg = document.getElementById("roomAvailabilityMessage");
 
-      if (!name || !phone || !room || !duration) {
-        alert("Please fill all fields and calculate rent.");
+      roomSelect.innerHTML = ''; // Clear old options
+
+      if (!roomType) {
+        roomSelect.classList.add("hidden");
+        availabilityMsg.style.display = "none";
         return;
       }
 
-      const roomTaken = customerData.some(c => c.room === room);
-      if (roomTaken) {
-        alert("This room is already assigned. Choose another room.");
+      const usedRooms = customerData.map(c => c.room);
+      const availableRooms = totalRooms[roomType].filter(room => !usedRooms.includes(room));
+
+      if (availableRooms.length === 0) {
+        roomSelect.classList.add("hidden");
+        availabilityMsg.style.display = "block";
+      } else {
+        roomSelect.classList.remove("hidden");
+        availabilityMsg.style.display = "none";
+        availableRooms.forEach(room => {
+          const opt = document.createElement("option");
+          opt.value = room;
+          opt.textContent = room;
+          roomSelect.appendChild(opt);
+        });
+      }
+    }
+
+    function addCustomer() {
+      const name = document.getElementById("customerName").value;
+      const phone = document.getElementById("phoneNumber").value;
+      const duration = parseInt(document.getElementById("stayDuration").value);
+      const roomType = document.getElementById("roomType").value;
+      const selectedRoom = document.getElementById("availableRoomsSelect").value;
+
+      if (!name || !phone || !duration || !roomType || !selectedRoom) {
+        alert("Please fill all fields and ensure a room is selected.");
         return;
       }
 
       const newCustomer = {
         name,
         phone,
-        room,
+        room: selectedRoom,
         duration,
         rentPKR,
         rentUSD,
-        date: new Date().toLocaleString()
+        date: new Date().toLocaleString(),
+        remainingDays: duration
       };
 
       customerData.push(newCustomer);
       localStorage.setItem("customers", JSON.stringify(customerData));
-      alert("Customer added successfully!");
+      alert(`Customer added successfully! Room Assigned: ${selectedRoom}`);
 
+      // Reset form
       document.getElementById("customerName").value = '';
       document.getElementById("phoneNumber").value = '';
-      document.getElementById("roomNumber").value = '';
+      document.getElementById("roomType").value = '';
       document.getElementById("stayDuration").value = '';
       document.getElementById("rentDisplay").innerText = '';
+      document.getElementById("availableRoomsSelect").classList.add("hidden");
+      document.getElementById("roomAvailabilityMessage").style.display = "none";
     }
 
     function showHistory() {
@@ -195,7 +242,8 @@
           div.className = "customer-entry";
           div.innerHTML = `
             <strong>${cust.name}</strong> | Phone: ${cust.phone} | Room: ${cust.room}<br/>
-            Stay: ${cust.duration} day(s) | Rent: Rs ${cust.rentPKR} / $${cust.rentUSD}<br/>
+            Stay: ${cust.duration} day(s) | Remaining: ${cust.remainingDays} day(s)<br/>
+            Rent: Rs ${cust.rentPKR} / $${cust.rentUSD}<br/>
             <small>${cust.date}</small><br/>
             <button onclick="deleteCustomer(${index})">Delete</button>
           `;
